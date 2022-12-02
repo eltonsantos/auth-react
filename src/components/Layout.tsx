@@ -1,11 +1,13 @@
-import { Outlet } from "react-router-dom";
+import { Menu } from "./Menu";
 
-export function Layout({ children }: children.ReactNode) {
+export function Layout() {
 
   return (
    <div>
-    Bem vindo, 
+    Aqui é a página Layout
 
+    <Menu />
+    
    </div>
   )
 }

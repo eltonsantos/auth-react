@@ -1,8 +1,13 @@
+import { Menu } from "./Menu";
+
 export function Admin() {
 
   return (
    <div>
-    Admin
+    Aqui é a página Admin
+
+    <Menu />
+    
    </div>
   )
 }

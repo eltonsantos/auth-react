@@ -6,11 +6,19 @@ export function Login() {
   const navigate = useNavigate()
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
+  const [logged, setLogged] = useState(() => {
+    const isLogged = localStorage.getItem('@auth:logged')
+    return !!isLogged
+  });
 
   function handleLogin (event: FormEvent) {
     event.preventDefault();
     try {
-      console.log(`Email: ${email} - Password: ${password}`)
+      localStorage.setItem('@auth:email', email);
+      localStorage.setItem('@auth:password', password);
+      localStorage.setItem('@auth:logged', 'true');
+      setLogged(true)
+      console.log(`Email: ${email} - Logged: ${logged}`);
       navigate('/')
     } catch (e) {
       console.log(`Erro: ${e}`)
